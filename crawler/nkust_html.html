@@ -1,0 +1,310 @@
+<html>
+  <head>
+    <title>Untitled Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../style/main.css" />
+    <!--CSS link-->
+    <style>
+      a:link {
+        color: darkred;
+        font-style: normal;
+        text-decoration: none;
+        cursor: hand;
+      }
+      a:visited {
+        color: darkred;
+        font-style: normal;
+        text-decoration: none;
+      }
+      a:active {
+        color: darkred;
+        font-style: normal;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+        font-style: bold;
+        text-decoration: none;
+      }
+    </style>
+
+    <script language="javascript" src="../control.js"></script>
+  </head>
+  <body class="sbody" oncontextmenu="of_setcontextmenu()">
+    <form id="form1" name="form1" action="" method="post">
+      <tablex
+        width="80%"
+        border="1"
+        cellspacing="0"
+        class="stable"
+        cellpadding="2"
+        bgcolor="#cccccc"
+        bordercolor="#999999"
+        bordercolordark="white"
+        align="center"
+      >
+        <tr class="str">
+          <td align="center" bgcolor="#6699CC">
+            <font style="font-size: 14pt; font-family: 標楷體"
+              ><b>課程資料查詢</b></font
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <font color="darkred">
+              ※請先選擇查詢條件或輸入關鍵字,學期4為暑修</font
+            ><br /><font color="darkred"> ※輸入關鍵字查詢,請輸入完整名稱</font
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td nowrap>
+            學年學期：<select
+              id="yms_yms"
+              name="yms_yms"
+              size="1"
+              class="text11"
+            >
+              <option value="112#1">112學年度第1學期</option>
+              <option value="112#2" selected>112學年度第2學期</option>
+              <option value="112#5">112學年度先修學期</option>
+              <option value="111#1">111學年度第1學期</option>
+              <option value="111#2">111學年度第2學期</option>
+              <option value="111#3">111學年度寒修</option>
+              <option value="111#4">111學年度暑修</option>
+              <option value="111#5">111學年度先修學期</option>
+              <option value="110#1">110學年度第1學期</option>
+              <option value="110#2">110學年度第2學期</option>
+              <option value="110#3">110學年度寒修</option>
+              <option value="110#4">110學年度暑修</option>
+              <option value="110#5">110學年度先修學期</option>
+              <option value="110#7">110學年度第7學期</option>
+              <option value="109#1">109學年度第1學期</option>
+              <option value="109#2">109學年度第2學期</option>
+              <option value="109#3">109學年度寒修</option>
+              <option value="109#4">109學年度暑修</option>
+              <option value="108#1">108學年度第1學期</option>
+              <option value="108#2">108學年度第2學期</option>
+              <option value="108#4">108學年度暑修</option>
+              <option value="108#5">108學年度先修學期</option>
+              <option value="107#1">107學年度第1學期</option>
+              <option value="107#2">107學年度第2學期</option>
+              <option value="107#3">107學年度寒修</option>
+              <option value="107#4">107學年度暑修</option>
+              <option value="107#6">107學年度暑修(一)</option>
+              <option value="106#1">106學年度第1學期</option>
+              <option value="106#2">106學年度第2學期</option>
+              <option value="106#3">106學年度寒修</option>
+              <option value="106#4">106學年度暑修</option>
+              <option value="106#5">106學年度先修學期</option>
+              <option value="106#6">106學年度暑修(一)</option>
+              <option value="105#1">105學年度第1學期</option>
+              <option value="105#2">105學年度第2學期</option>
+              <option value="105#4">105學年度暑修</option>
+              <option value="105#5">105學年度先休學期</option>
+              <option value="105#6">105學年度暑修(一)</option>
+              <option value="104#1">104學年度第1學期</option>
+              <option value="104#2">104學年度第2學期</option>
+              <option value="104#3">104學年度寒修</option>
+              <option value="104#4">104學年度暑修</option>
+              <option value="104#6">104學年度暑修(一)</option>
+              <option value="104#7">104學年度第3學期</option>
+              <option value="103#1">103學年度第1學期</option>
+              <option value="103#2">103學年度第2學期</option>
+              <option value="103#4">103學年度暑修</option>
+              <option value="103#5">103學年度先修學期</option>
+              <option value="103#6">103學年度暑修(一)</option>
+              <option value="102#1">102學年度第1學期</option>
+              <option value="102#2">102學年度第2學期</option>
+              <option value="102#4">102學年度暑修</option>
+              <option value="102#6">102學年度暑修(一)</option>
+              <option value="101#1">101學年度第1學期</option>
+              <option value="101#2">101學年度第2學期</option>
+              <option value="101#3">101學年度寒修</option>
+              <option value="101#4">101學年度暑修</option>
+              <option value="101#6">101學年度暑修(一)</option>
+              <option value="100#1">100學年度第1學期</option>
+              <option value="100#2">100學年度第2學期</option>
+              <option value="100#3">100學年度寒修</option>
+              <option value="100#4">100學年度暑修</option>
+              <option value="100#6">100學年度暑修(一)</option>
+              <option value="99#1">99學年度第1學期</option>
+              <option value="99#2">99學年度第2學期</option>
+              <option value="99#3">99學年度寒修</option>
+              <option value="99#4">99學年度暑修</option>
+              <option value="99#6">99學年度暑修(一)</option>
+              <option value="98#1">98學年度第1學期</option>
+              <option value="98#2">98學年度第2學期</option>
+              <option value="98#3">98學年度寒修</option>
+              <option value="98#4">98學年度暑修</option>
+              <option value="98#6">98學年度暑修(一)</option>
+              <option value="97#1">97學年度第1學期</option>
+              <option value="97#2">97學年度第2學期</option>
+              <option value="97#3">97學年度寒修</option>
+              <option value="97#4">97學年度暑修</option>
+              <option value="97#6">97學年度暑修(一)</option>
+              <option value="96#1">96學年度第1學期</option>
+              <option value="96#2">96學年度第2學期</option>
+              <option value="96#3">96學年度寒修</option>
+              <option value="96#4">96學年度暑修</option>
+              <option value="96#6">96學年度暑修(一)</option>
+              <option value="95#1">95學年度第1學期</option>
+              <option value="95#2">95學年度第2學期</option>
+              <option value="95#6">95學年度暑修(一)</option>
+              <option value="94#1">94學年度第1學期</option>
+              <option value="94#2">94學年度第2學期</option>
+              <option value="94#4">94學年度暑修</option>
+              <option value="94#6">94學年度暑修(一)</option>
+              <option value="93#1">93學年度第1學期</option>
+              <option value="93#2">93學年度第2學期</option>
+              <option value="93#4">93學年度暑修</option>
+              <option value="93#6">93學年度暑修(一)</option></select
+            >上課校區：<select
+              id="cmp_area_id"
+              name="cmp_area_id"
+              onchange="go_self()"
+            >
+              <option value="">請選擇</option>
+              <option value="0">國立高雄科技大學(全校區)</option>
+              <option selected value="1">國立高雄科技大學(建工校區)</option>
+              <option value="2">國立高雄科技大學(燕巢校區)</option>
+              <option value="3">國立高雄科技大學(第一校區)</option>
+              <option value="4">國立高雄科技大學(楠梓校區)</option>
+              <option value="5">國立高雄科技大學(旗津校區)</option></select
+            >學 制：<select id="dgr_id" name="dgr_id" onchange="go_self()">
+              <option value="">請選擇</option>
+              <option value="11">日間部二專</option>
+              <option value="12">日間部五專</option>
+              <option value="13">日間部二技</option>
+              <option value="14">日間部四技</option>
+              <option value="15">日間部碩士春季班</option>
+              <option value="16">日間部碩士秋季班</option>
+              <option value="17">日間部碩士</option>
+              <option value="18">日間部博士</option>
+              <option value="19">日四技產學攜手專班</option>
+              <option value="21">進修部二專</option>
+              <option value="23">進修部二技</option>
+              <option value="24">進修部四技</option>
+              <option value="25">進修部碩士春季班</option>
+              <option value="26">進修部碩士秋季班</option>
+              <option value="27">碩士在職專班</option>
+              <option value="29">境外碩士在職春季專班</option>
+              <option value="30">境外碩士在職秋季專班</option>
+              <option value="31">進修學院二專</option>
+              <option value="33">進修學院二技</option>
+              <option value="40">學士後學程</option>
+              <option value="41">二技在職專班</option>
+              <option value="42">進四技產學攜手專班</option>
+              <option value="45">進修部碩士</option></select
+            >科 系：<select id="unt_id" name="unt_id" size="1">
+              <option value="">請選擇</option></select
+            >&nbsp;&nbsp;年級：<select id="clyear" name="clyear" size="1">
+              <option value="1" selected>1年級</option>
+              <option value="2">2年級</option>
+              <option value="3">3年級</option>
+              <option value="4">4年級</option>
+              <option value="5">5年級</option>
+              <option value="6">6年級</option>
+              <option value="7">7年級</option>
+              <option value="8">8年級</option>
+              <option value="9">9年級</option>
+              <option value="%">全部年級</option></select
+            >&nbsp;&nbsp;星期：<select id="week" name="week" size="1">
+              <option value="%" selected>所有星期</option>
+              <option value="1">星期一</option>
+              <option value="2">星期二</option>
+              <option value="3">星期三</option>
+              <option value="4">星期四</option>
+              <option value="5">星期五</option>
+              <option value="6">星期六</option>
+              <option value="7">星期日</option></select
+            >　節次：<select id="period" name="period" size="1">
+              <option value="%" selected>所有節次</option>
+              <option value="0">M</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">A</option>
+              <option value="6">5</option>
+              <option value="7">6</option>
+              <option value="8">7</option>
+              <option value="9">8</option>
+              <option value="10">9</option>
+              <option value="11">10</option>
+              <option value="12">11</option>
+              <option value="13">12</option>
+              <option value="14">13</option></select
+            >&nbsp;&nbsp;<input
+              type="button"
+              class="button"
+              value="條件查詢"
+              onclick="chkvalue1();"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td nowrap>
+            科目：<input
+              id="sub_name"
+              name="sub_name"
+              type="text"
+              size="12"
+              value=""
+            />&nbsp;&nbsp;教師：<input
+              id="teacher"
+              name="teacher"
+              type="text"
+              size="10"
+              value=""
+            />&nbsp;&nbsp;<input
+              type="button"
+              class="button"
+              value="科目及教師查詢"
+              onclick="chkvalue2();"
+            /><input type="hidden" id="reading" name="reading" value="" />
+          </td>
+        </tr>
+      </tablex>
+    </form>
+    <script type="text/javascript">
+      window.onload = function () {
+        top.banner.document.getElementById("switch").disabled = false;
+        top.banner.document.getElementById("change_pwd").disabled = false;
+        top.banner.document.getElementById("relogin").disabled = false;
+      };
+
+      function go_self() {
+        form1.reading.value = "";
+        form1.submit();
+      }
+
+      function chkvalue1() {
+        if (form1.unt_id.value == "" || form1.dgr_id.value == "") {
+          alert("請選擇 「學制」 或 「系所」 !!!");
+          return false;
+        }
+        form1.reading.value = "reading";
+        form1.submit();
+      }
+
+      function chkvalue2() {
+        if (form1.teacher.value == "" && form1.sub_name.value == "") {
+          alert("請輸入完整 「科目名稱」 或 「教師名稱」 !!!");
+          return false;
+        }
+        form1.reading.value = "reading";
+        form1.submit();
+      }
+
+      function go_next(str1, str2, str3) {
+        thisform.arg01.value = str1;
+        thisform.arg02.value = str2;
+        thisform.arg04.value = str3;
+        thisform.action = "ag064_print.jsp";
+        thisform.submit();
+      }
+    </script>
+  </body>
+</html>
