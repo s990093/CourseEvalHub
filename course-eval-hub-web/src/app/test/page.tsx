@@ -1,12 +1,12 @@
-"use client";
+import { FullCoursePostCell } from "../components";
+import { generateFakeCourse } from "../mock/home";
 
-import Image from "next/image";
-import { Navbar } from "../components";
-
-export default function Home() {
+// eslint-disable-next-line @next/next/no-async-client-component
+export default async function Home() {
+  const course = await generateFakeCourse();
   return (
-    <>
-      <Navbar />
-    </>
+    <div className="flex justify-center">
+      <FullCoursePostCell course={course} />
+    </div>
   );
 }

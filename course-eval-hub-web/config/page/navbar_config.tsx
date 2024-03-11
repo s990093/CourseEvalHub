@@ -14,14 +14,19 @@ interface PageConfig {
 
 const NavbarConfig: PageConfig = {
   navItemTitle: {
-    navItems: { title: "評價網站", url: "/", icon: "home", open: true },
+    navItems: { title: "title", url: "/", icon: "home", open: true },
   },
   navItems: [
     { title: "探索", url: "/discover", icon: "home", open: true },
     { title: "關於", url: "/about", icon: "info", open: true },
-    { title: "許願", url: "/about", icon: "info", open: true },
-    { title: "評價", url: "/services", icon: "services", open: true },
+    { title: "許願", url: "/wish", icon: "info", open: true },
+    { title: "評價", url: "/post", icon: "services", open: true },
   ],
+};
+
+const Indexconfig = {
+  title: "評價網",
+  desc: "高科課程評價",
 };
 
 export default NavbarConfig;

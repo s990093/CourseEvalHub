@@ -11,7 +11,7 @@ const CourseCell: React.FC<CourseCellProps> = ({ courseName }) => {
   );
 };
 
-const Course = () => {
+const Curriculum = () => {
   const courses = 50; // 设置课程数
   const weekly = 5; // 设置每周的课程数
 
@@ -35,11 +35,11 @@ const Course = () => {
     <div className="bg-[#9ca3af] rounded shadow-md p-4 transition duration-300">
       <h1 className="flex justify-center text-xl font-bold m-3">課表</h1>
       <div className="flex flex-row">
-        <div className="flex flex-col m-2 space-y-3 items-center relative ">
+        <div className="flex flex-col m-2 space-y-3 items-center">
           <Button>核心</Button>
           <Button>博雅</Button>
           <Button>體育</Button>
-          <div className="absolute inset-x-0 bottom-0">
+          <div className="bottom-0">
             <Button>搜索</Button>
           </div>
         </div>
@@ -50,4 +50,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default Curriculum;

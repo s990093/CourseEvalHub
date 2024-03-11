@@ -9,3 +9,6 @@ export * from "./course/index";
 
 // button
 export * from "./button/index";
+
+// banner
+export * from "./banner/index";

@@ -1,13 +1,28 @@
 "use client";
-import { useState } from "react";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { NavbarConfig } from "./../../../config/index";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
+
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
+    // router.push(`$/result?query=${searchValue}`);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      router.push(`/result?query=${searchValue}`);
+    }
+  };
+  const handleSubmit = () => {
+    // console.log("执行搜索:", searchValue);
+    router.push(`/result?query=${searchValue}`);
   };
 
   return (
@@ -40,13 +55,27 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <input
-              type="text"
-              value={searchValue}
-              onChange={handleSearchChange}
-              placeholder="搜索..."
-              className="border border-gray-300 rounded px-2 py-1"
-            />
+            <div className="flex items-center mr-1">
+              <input
+                type="text"
+                value={searchValue}
+                onChange={handleSearchChange}
+                onKeyDown={handleKeyDown}
+                placeholder="搜索..."
+                className="border border-gray-300 rounded px-2 py-1 mr-1"
+              />
+              <button
+                onClick={handleSubmit}
+                className="border border-gray-300 rounded px-2 py-1"
+              >
+                <Image
+                  src="/svg/magnifying-glass-solid.svg"
+                  alt="Logo"
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </div>
           </li>
         </ul>
       </div>

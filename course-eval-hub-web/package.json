@@ -13,12 +13,14 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "faker": "^6.6.6",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
+    "@faker-js/faker": "^8.4.1",
     "@storybook/addon-jest": "^7.6.17",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^10.4.9",
