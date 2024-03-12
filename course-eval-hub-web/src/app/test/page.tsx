@@ -5,8 +5,11 @@ import { generateFakeCourse } from "../mock/home";
 export default async function Home() {
   const course = await generateFakeCourse();
   return (
-    <div className="flex justify-center">
-      <FullCoursePostCell course={course} />
+    <div className="flex flex-col space-y-4 justify-center items-center">
+      <div className="w-3/4">
+        <FullCoursePostCell course={course} />
+        <FullCoursePostCell course={course} />
+      </div>
     </div>
   );
 }

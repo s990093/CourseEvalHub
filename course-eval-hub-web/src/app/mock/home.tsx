@@ -1,9 +1,25 @@
-import { Course, HomePageData, Tag } from "../interface";
+import { Course, HomePageData, Tag, Evaluate } from "../interface";
 import { fakerZH_TW as faker } from "@faker-js/faker";
 
 // export const faker = new Faker({
 //   locale: [zh_TW],
 // });
+
+export function generateFakeCourseEvaluate(): Evaluate {
+  return {
+    title: faker.helpers.arrayElement([
+      "品質評分",
+      "甜度評分",
+      "作業評分",
+      "涼度評分",
+    ]),
+    rating: faker.number.int({ min: 0, max: 5 }),
+  };
+}
+
+export const fakeEvaluate: Evaluate[] = Array.from({ length: 5 }, () =>
+  generateFakeCourseEvaluate()
+);
 export function generateFakeCourse(): Course {
   return {
     id: faker.number.int({ min: 1000, max: 1300 }),
@@ -19,11 +35,21 @@ export function generateFakeCourse(): Course {
       teacher: faker.person.fullName(),
       type: faker.helpers.arrayElement(["博雅", "核心", "選修", "體育"]),
     },
-    rating: {
-      quality: faker.number.int({ min: 1, max: 5 }),
-      sweetness: faker.number.int({ min: 1, max: 5 }),
-      coolness: faker.number.int({ min: 1, max: 5 }),
-      homework: faker.number.int({ min: 1, max: 5 }),
+    quality: {
+      title: "品質評分",
+      rating: faker.number.int({ min: 0, max: 5 }),
+    },
+    sweetness: {
+      title: "甜度評分",
+      rating: faker.number.int({ min: 0, max: 5 }),
+    },
+    coolness: {
+      title: "作業評分",
+      rating: faker.number.int({ min: 0, max: 5 }),
+    },
+    homework: {
+      title: "涼度評分",
+      rating: faker.number.int({ min: 0, max: 5 }),
     },
     recommendation: faker.number.int({ min: 0, max: 5 }),
     totalStudents: faker.number.int(),
@@ -49,6 +75,7 @@ function generateFakeTags(): Tag {
     ]),
   };
 }
+
 export const fakeCourses: Course[] = Array.from({ length: 10 }, () =>
   generateFakeCourse()
 );

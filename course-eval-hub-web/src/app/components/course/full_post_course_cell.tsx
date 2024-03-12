@@ -1,29 +1,113 @@
+"use client";
+import React from "react";
 import { Course } from "@/app/interface";
-import Tags from "../card/tags";
-
+// components
+import { Tags, BaseTag, BaseCard } from "@/app/components";
+import CourseEvaluate from "./course_evaluate";
+import SeriaNumber from "./serial_number";
 const FullCoursePostCell = ({ course }: { course: Course }) => {
+  const [showFullText, setShowFullText] = React.useState<boolean>(false);
+
+  const toggleShowFullText = () => {
+    setShowFullText(!showFullText);
+  };
+  const year = course.timestamp.getFullYear();
+  const month = course.timestamp.getMonth();
+  const day = course.timestamp.getDate();
+
+  const board_style = "sky-500";
+
+  const handleClick = () => {
+    console.log("Card clicked");
+  };
+
   return (
-    <div className="bg-[#9ca3af] rounded-lg shadow-lg p-4 cursor-pointer  transition duration-300 w-3/4">
-      <h2 className="text-xl font-bold">人體探索 # 1209 核心</h2>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="p-4 rounded-lg">
-          {/* 第一部分 - 課程內容 */}
-          <h2 className="text-lg font-bold mb-4">課程內容</h2>
-          {/* 这里添加你的課程內容 */}
-          <div className="grid gird-rows-2">
-            <Tags />
-            <Tags />
-            <Tags />
-            <Tags />
+    <BaseCard
+      onClick={handleClick}
+      className={`  bg-opacity-60 border-2 border-${board_style} m-3`}
+    >
+      <div className={`divide-y divide-${board_style}`}>
+        <div className="p-4">
+          <div className="flex flex-row justify-between">
+            {/* title */}
+            <div className="flex flex-row items-center">
+              <div className="text-xl font-bold">
+                {course.info.course} / {course.info.teacher}
+              </div>
+              <div className="ml-3">
+                <BaseTag className="bg-[#a5f3fc]" title={course.info.type} />
+              </div>
+            </div>
+            {/* time */}
+            <div className="flex items-center">
+              <div className="italic text-pretty">
+                時間: {year}/{month}/{day}
+              </div>
+            </div>
           </div>
         </div>
-        <div className=" p-4 rounded-lg">
-          {/* 第二部分 - 評論 */}
-          <h2 className="text-lg font-bold mb-4">評論</h2>
-          <div>{course.comments}</div>
+
+        {/* bottom content */}
+        <div
+          className={`grid grid-cols-2 gap-4 divide-x divide-${board_style}`}
+        >
+          {/* renderedEvaluates */}
+          <div className="p-4">
+            {/* quality */}
+            <CourseEvaluate
+              title={course.quality.title}
+              rating={course.quality.rating}
+              iconRegular={"heart-regular"}
+              iconSolid={"heart-solid"}
+              iconColor="#22d3ee"
+            />
+            {/* sweetness */}
+            <CourseEvaluate
+              title={course.sweetness.title}
+              rating={course.sweetness.rating}
+              iconColor="#22d3ee"
+            />
+            <CourseEvaluate
+              title={course.coolness.title}
+              rating={course.coolness.rating}
+              iconColor="#22d3ee"
+            />
+            <CourseEvaluate
+              title={course.homework.title}
+              rating={course.homework.rating}
+              iconSolid="pen-to-square-solid"
+              iconRegular="pen-to-square-regular"
+              iconColor="#22d3ee"
+            />
+            {/* 課號 */}
+            <SeriaNumber number={course.id} />
+          </div>
+          <div className=" p-4 ">
+            {/* comment*/}
+            <div className="text-base overflow-hidden">
+              <div className={showFullText ? "" : "line-clamp-5"}>
+                {course.comments}
+              </div>
+            </div>
+            {showFullText ? (
+              <button
+                onClick={toggleShowFullText}
+                className="text-blue-500 hover:underline"
+              >
+                收起
+              </button>
+            ) : (
+              <button
+                onClick={toggleShowFullText}
+                className="text-blue-500 hover:underline"
+              >
+                閱讀更多
+              </button>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </BaseCard>
   );
 };
 

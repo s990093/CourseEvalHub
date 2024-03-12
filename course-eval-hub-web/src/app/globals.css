@@ -6,15 +6,15 @@
 /* root bg color need to setting primary -> blue-500 */
 :root {
   --foreground-rgb: 255, 255, 255; /* 将前景色设置为白色 */
-  --background-start-rgb: 8, 145, 178; /* 设置背景渐变起始颜色为 #082f49 */
-  --background-end-rgb: 8, 47, 73; /* 设置背景渐变结束颜色为 #0891b2 */
+  --background-start-rgb: 191, 219, 254; /* 设置背景渐变起始颜色为 #082f49 */
+  --background-end-rgb: 7, 89, 133; /* 设置背景渐变结束颜色为 #0891b2 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255; /* 将前景色设置为白色 */
-    --background-start-rgb: 8, 145, 178; /* 设置背景渐变起始颜色为 #082f49 */
-    --background-end-rgb: 8, 47, 73; /* 设置背景渐变结束颜色为 #0891b2 */
+    --background-start-rgb: 191, 219, 254; /* 设置背景渐变起始颜色为 #082f49 */
+    --background-end-rgb: 7, 89, 133; /* 设置背景渐变结束颜色为 #0891b2 */
   }
 }
 body {

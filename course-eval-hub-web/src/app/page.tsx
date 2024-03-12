@@ -27,9 +27,9 @@ async function getData() {
 export default async function Home() {
   const homePageData = await getData();
   // 截取前三筆資料
-  const firstThreeCourses = homePageData.courses.slice(0, 3);
+  const firstThreeCourses = homePageData.courses.slice(0, 4);
   // 截取第四筆及之後的資料
-  const restCourses = homePageData.courses.slice(3);
+  const restCourses = homePageData.courses.slice(4);
 
   return (
     <div>
@@ -43,16 +43,17 @@ export default async function Home() {
         </div>
         <div className="w-1/2 flex flex-col space-y-4">
           {firstThreeCourses.map((course) => (
-            <HalfCoursePostCell key={course.id} course={course} />
+            <FullCoursePostCell key={course.id} course={course} />
           ))}
         </div>
       </div>
       {/* full course */}
-      <div className="flex flex-col items-center justify-center m-3 space-y-4">
-        {restCourses.map((course) => (
-          <FullCoursePostCell key={course.id} course={course} />
-        ))}
-
+      <div className="flex flex-col items-center justify-center m-3">
+        <div className="w-3/4 space-y-4">
+          {restCourses.map((course) => (
+            <FullCoursePostCell key={course.id} course={course} />
+          ))}
+        </div>
         <p>more...</p>
       </div>
     </div>
